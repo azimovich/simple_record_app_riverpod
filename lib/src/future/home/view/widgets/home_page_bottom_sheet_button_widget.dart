@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/style/app_colors.dart';
+
+class HomePageBottomSheetButtonWidget extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String text;
+  final bool isDelete;
+  const HomePageBottomSheetButtonWidget({super.key, required this.onPressed, required this.text, this.isDelete = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      onPressed: onPressed,
+      color: AppColors.bgColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+      minWidth: MediaQuery.of(context).size.width * 0.425,
+      padding: REdgeInsets.symmetric(vertical: 10),
+      highlightElevation: 0,
+      elevation: 0,
+      child: Text(
+        text,
+        style: TextStyle(color: isDelete ? AppColors.mainColor : AppColors.c424242),
+      ),
+    );
+  }
+}
