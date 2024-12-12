@@ -14,9 +14,10 @@ class HomePageBottomSheetButtonWidget extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       color: AppColors.bgColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-      minWidth: MediaQuery.of(context).size.width * 0.425,
+      height : 40.h,
       padding: REdgeInsets.symmetric(vertical: 10),
+      minWidth: MediaQuery.of(context).size.width * 0.425,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
       highlightElevation: 0,
       elevation: 0,
       child: Text(

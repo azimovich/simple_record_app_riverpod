@@ -124,7 +124,7 @@ class _RecordPageState extends ConsumerState<RecordPage> {
                       iconSize: 30.h,
                     ),
                     color: Colors.white,
-                    icon: const Icon(Icons.done_outlined),
+                    icon: const Icon(CupertinoIcons.checkmark_alt),
                   ),
                   SizedBox.fromSize(
                     size: Size(60.w, 60.h),

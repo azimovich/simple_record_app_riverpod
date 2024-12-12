@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:developer';
+import 'package:intl/intl.dart';
 
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
@@ -29,9 +30,14 @@ class RecordServer {
   static Future<String?> createAudioFile(String? newRecordPath) async {
     try {
       if (newRecordPath != null && audioDirectory != null) {
+        DateTime now = DateTime.now();
+
+        // Formatni o'zgartirish uchun DateFormat'dan foydalanamiz
+        String formattedDate = DateFormat('dd.MM.yyyy-HH:mm:ss').format(now);
         final newFilePath = p.join(
           audioDirectory!.path,
-          'audio_${DateTime.now().millisecondsSinceEpoch}.m4a',
+          // 'audio_${DateTime.now().millisecondsSinceEpoch}.m4a',
+          'audio_$formattedDate.m4a',
         );
 
         final tempFile = File(newRecordPath);

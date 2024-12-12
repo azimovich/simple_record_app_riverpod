@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:path/path.dart' as p;
 
 import '../../vm/player_vm.dart';
 import '../../../../../app_vm.dart';
@@ -50,7 +51,12 @@ class _PlayerPageState extends ConsumerState<PlayerPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const PlayerPageTopWidget(),
-              60.verticalSpace,
+              20.verticalSpace,
+              Text(
+                p.basename(widget.audioPath),
+                style: TextStyle(fontSize: 18.sp, color: AppColors.c424242, fontWeight: FontWeight.w500),
+              ),
+              40.verticalSpace,
 
               // Slider for Seeking
               StreamBuilder<Duration?>(

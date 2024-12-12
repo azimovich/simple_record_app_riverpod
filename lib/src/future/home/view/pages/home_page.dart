@@ -91,11 +91,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                         ),
                       ),
                       10.horizontalSpace,
-                      Text(
-                        p.basename(file.path),
-                        style: TextStyle(color: AppColors.c424242, fontSize: 16.sp),
+                      Expanded(
+                        child: Text(
+                          p.basename(file.path),
+                          style: TextStyle(color: AppColors.c424242, fontSize: 16.sp),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      const Spacer(),
+                      // const Spacer(),
                       SizedBox(
                         height: 36.h,
                         width: 36.w,
