@@ -1,12 +1,12 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 
-import "../../future/home/view/pages/home_page.dart";
-import "../../future/home/view/pages/play_record_page.dart";
-import "../../future/home/view/pages/record_page.dart";
 import "../../future/main/view/pages/main_page.dart";
-import "../../future/setting/view/pages/setting_page.dart";
+import "../../future/home/view/pages/home_page.dart";
+import "../../future/home/view/pages/player_page.dart";
+import "../../future/home/view/pages/record_page.dart";
 import "../../future/splash/view/pages/splash_page.dart";
+import "../../future/setting/view/pages/setting_page.dart";
 import "app_route_names.dart";
 
 GlobalKey<NavigatorState> parentNavigatorKey = GlobalKey<NavigatorState>();

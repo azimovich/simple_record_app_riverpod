@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:path/path.dart' as p;
+import 'package:share_plus/share_plus.dart';
 
+import '../../../../core/utils/utils.dart';
 import '../../vm/player_vm.dart';
 import '../../../../../app_vm.dart';
 import '../../../../core/style/app_colors.dart';
@@ -34,6 +36,23 @@ class _PlayerPageState extends ConsumerState<PlayerPage> {
           "Zapisni Eshitish",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              try {
+                final xFile = XFile(widget.audioPath); // Path ni XFile obyektiga o'zgartirish
+                await Share.shareXFiles(
+                  [xFile],
+                  // text: 'Mana, mening yozib olgan ovozim!',
+                );
+              } catch (e) {
+                Utils.fireSnackBar("Ulashda xatolik: $e", AppColors.bgColor);
+              }
+            },
+            icon: const Icon(Icons.ios_share_rounded, color: Colors.white),
+            highlightColor: const Color.fromRGBO(255, 255, 255, 0.2),
+          ),
+        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);

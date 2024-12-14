@@ -12,4 +12,7 @@ class AssetsPath {
   static const String fingerIconPath = "assets/icon/finger.svg";
   static const String translateIconPath = "assets/icon/translate.svg";
   static const String infoIconPath = "assets/icon/info.svg";
+  static const String uzFlagIconPath = "assets/icon/uz_flag.svg";
+  static const String ruFlagIconPath = "assets/icon/ru_flag.svg";
+  static const String enFlagIconPath = "assets/icon/en_flag.svg";
 }

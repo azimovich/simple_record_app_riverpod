@@ -113,8 +113,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                               },
                             );
                           },
-                          // iconSize: 30,
-
                           color: AppColors.mainColor,
                           padding: EdgeInsets.zero,
                           style: IconButton.styleFrom(

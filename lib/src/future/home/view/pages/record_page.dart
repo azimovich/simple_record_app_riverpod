@@ -98,6 +98,7 @@ class _RecordPageState extends ConsumerState<RecordPage> {
               ),
               40.verticalSpace,
               Row(
+                
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
