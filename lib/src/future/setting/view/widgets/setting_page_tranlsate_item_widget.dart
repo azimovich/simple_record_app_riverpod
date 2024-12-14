@@ -40,5 +40,3 @@ class SettingPageTranlsateItemWidget extends StatelessWidget {
     );
   }
 }
-
-

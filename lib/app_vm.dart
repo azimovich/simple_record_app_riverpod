@@ -1,9 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/future/home/vm/home_vm.dart';
+import 'src/future/main/vm/main_vm.dart';
 import 'src/future/home/vm/player_vm.dart';
 import 'src/future/home/vm/record_vm.dart';
-import 'src/future/main/vm/main_vm.dart';
+import 'src/future/setting/vm/setting_vm.dart';
 
 final mainVM = ChangeNotifierProvider.autoDispose<MainVm>((ref) {
   return MainVm();
@@ -19,4 +20,8 @@ final recordVM = ChangeNotifierProvider.autoDispose<RecordVm>((ref) {
 
 final playerVM = ChangeNotifierProvider.autoDispose<PlayerVm>((ref) {
   return PlayerVm();
+});
+
+final settingVM = ChangeNotifierProvider.autoDispose<SettingVm>((ref) {
+  return SettingVm();
 });

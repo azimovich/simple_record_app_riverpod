@@ -1,13 +1,13 @@
+import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:path/path.dart' as p;
-import 'package:share_plus/share_plus.dart';
 
-import '../../../../core/utils/utils.dart';
 import '../../vm/player_vm.dart';
 import '../../../../../app_vm.dart';
+import '../../../../core/utils/utils.dart';
 import '../../../../core/style/app_colors.dart';
 import '../widgets/player_page_top_widget.dart';
 
