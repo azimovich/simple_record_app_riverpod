@@ -10,7 +10,7 @@ class PlayerVm extends ChangeNotifier {
   final AudioPlayer audioPlayer = AudioPlayer();
   late Stream<Duration?> positionStream;
 
-  bool playerIsActive = false;
+  // bool playerIsActive = false;
 
   void initalization(String audioPath) {
     positionStream = audioPlayer.positionStream;
@@ -23,13 +23,13 @@ class PlayerVm extends ChangeNotifier {
 
   void playAudio() async {
     await audioPlayer.play();
-    playerIsActive = true;
+    // playerIsActive = true;
     notifyListeners();
   }
 
   void pauseAudio() async {
     await audioPlayer.pause();
-    playerIsActive = false;
+    // playerIsActive = false;
     notifyListeners();
   }
 

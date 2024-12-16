@@ -61,7 +61,6 @@ class RecordVm extends ChangeNotifier {
       await _record.start(const RecordConfig(), path: tempFilePath);
       log('Yozish boshlandi: $tempFilePath');
     }
-    // notifyListeners();
   }
 
   /// Stop record

@@ -1,5 +1,4 @@
-// import 'package:flutter/cupertino.dart';
-
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
@@ -59,8 +58,10 @@ class _HomePageState extends ConsumerState<HomePage> {
               padding: REdgeInsets.symmetric(vertical: 16, horizontal: 20),
               itemBuilder: (_, i) {
                 final file = vm.recordsList[i];
+                log(p.basename(file.path));
+                log(file.path);
+                log("");
 
-                /// Custom Default
                 return MaterialButton(
                   onPressed: () {
                     AppRouter.router.push("${AppRouteNames.home}${AppRouteNames.playerPage}", extra: file.path);
@@ -76,7 +77,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // play icon
                       SizedBox.fromSize(
                         size: Size(36.w, 36.h),
                         child: DecoratedBox(
@@ -98,7 +98,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      // const Spacer(),
                       SizedBox(
                         height: 36.h,
                         width: 36.w,

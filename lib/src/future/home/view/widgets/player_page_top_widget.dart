@@ -18,6 +18,7 @@ class PlayerPageTopWidget extends StatelessWidget {
             color: Colors.grey.shade400,
             spreadRadius: 2,
             blurRadius: 10,
+            blurStyle: BlurStyle.outer,
           )
         ]),
         child: Padding(

@@ -36,7 +36,6 @@ class RecordServer {
         String formattedDate = DateFormat('dd.MM.yyyy-HH:mm:ss').format(now);
         final newFilePath = p.join(
           audioDirectory!.path,
-          // 'audio_${DateTime.now().millisecondsSinceEpoch}.m4a',
           'audio_$formattedDate.m4a',
         );
 

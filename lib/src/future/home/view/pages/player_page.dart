@@ -55,6 +55,9 @@ class _PlayerPageState extends ConsumerState<PlayerPage> {
         ],
         leading: IconButton(
           onPressed: () {
+            if (vm.audioPlayer.playing) {
+              vm.audioPlayer.stop();
+            }
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),

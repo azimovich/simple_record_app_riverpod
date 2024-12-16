@@ -24,6 +24,8 @@ dependencies:
 
   record: ^5.2.0
   just_audio: ^0.9.42
+  audio_waveforms: ^1.2.0
+  permission_handler: ^11.0.1
 
   flutter_native_splash: ^2.4.1
   share_plus: ^10.1.2

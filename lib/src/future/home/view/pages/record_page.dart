@@ -1,39 +1,3 @@
-// import 'package:flutter/material.dart';
-// // import 'package:provider/provider.dart';
-
-// // import '../../vm/home_vm.dart';
-
-// class RecorderPage extends StatefulWidget {
-//   const RecorderPage({super.key});
-
-//   @override
-//   State<RecorderPage> createState() => _RecorderPageState();
-// }
-
-// class _RecorderPageState extends State<RecorderPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Yozish sahifasi'),
-//         automaticallyImplyLeading: false,
-//       ),
-//       body: const Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Text(
-//               'Ovoz yozilmoqda...',
-//               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-//             ),
-//             SizedBox(height: 20),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -58,14 +22,6 @@ class _RecordPageState extends ConsumerState<RecordPage> {
       ref.read(recordVM).startOrResumeTimer();
     });
   }
-  // @override
-  // void didChangeDependencies() {
-  //   // TODO: implement didChangeDependencies
-  //   super.didChangeDependencies();
-  //   ref.read(recordVM).startRecording().then((e) {
-  //     ref.read(recordVM).startOrResumeTimer();
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
