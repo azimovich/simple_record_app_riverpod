@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
@@ -58,10 +57,6 @@ class _HomePageState extends ConsumerState<HomePage> {
               padding: REdgeInsets.symmetric(vertical: 16, horizontal: 20),
               itemBuilder: (_, i) {
                 final file = vm.recordsList[i];
-                log(p.basename(file.path));
-                log(file.path);
-                log("");
-
                 return MaterialButton(
                   onPressed: () {
                     AppRouter.router.push("${AppRouteNames.home}${AppRouteNames.playerPage}", extra: file.path);

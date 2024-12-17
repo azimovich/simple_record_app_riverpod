@@ -14,7 +14,6 @@ class RecordServer {
     log("------------ Initialize Directory ------------");
     final appDocDir = await getApplicationDocumentsDirectory();
     audioDirectory = Directory(p.join(appDocDir.path, 'AudioFiles'));
-    log("Checking directory: ${audioDirectory.toString()}");
 
     if (!await audioDirectory!.exists()) {
       await audioDirectory!.create(recursive: true);
@@ -27,20 +26,48 @@ class RecordServer {
   }
 
   /// Creates a new audio file in the directory.
+  // static Future<String?> createAudioFile(String? newRecordPath) async {
+  //   try {
+  //     if (newRecordPath != null && audioDirectory != null) {
+  //       DateTime now = DateTime.now();
+
+  //       // Formatni o'zgartirish uchun DateFormat'dan foydalanamiz
+  //       String formattedDate = DateFormat('dd.MM.yyyy-HH:mm:ss').format(now);
+  //       final newFilePath = p.join(
+  //         audioDirectory!.path,
+  //         'audio_$formattedDate.m4a',
+  //       );
+
+  //       final tempFile = File(newRecordPath);
+  //       await tempFile.copy(newFilePath);
+  //       log('Audio saved at new file path: $newFilePath');
+  //       return newFilePath;
+  //     } else {
+  //       log('Error: newRecordPath is null or audioDirectory is not initialized.');
+  //     }
+  //   } catch (e, stackTrace) {
+  //     log('Failed to create audio file: $e', stackTrace: stackTrace);
+  //   }
+  //   return null;
+  // }
+
   static Future<String?> createAudioFile(String? newRecordPath) async {
     try {
       if (newRecordPath != null && audioDirectory != null) {
         DateTime now = DateTime.now();
+        String formattedDate = DateFormat('dd.MM.yyyy-HH:mm:ss').format(now).replaceAll(' ', '');
 
-        // Formatni o'zgartirish uchun DateFormat'dan foydalanamiz
-        String formattedDate = DateFormat('dd.MM.yyyy-HH:mm:ss').format(now);
-        final newFilePath = p.join(
-          audioDirectory!.path,
-          'audio_$formattedDate.m4a',
-        );
+        final newFilePath = p.join(audioDirectory!.path, 'audio_$formattedDate.m4a');
 
         final tempFile = File(newRecordPath);
+        if (!await tempFile.exists()) {
+          log("Error: Temp file does not exist!");
+          return null;
+        }
+
         await tempFile.copy(newFilePath);
+        await tempFile.delete();
+
         log('Audio saved at new file path: $newFilePath');
         return newFilePath;
       } else {
@@ -52,7 +79,6 @@ class RecordServer {
     return null;
   }
 
-  /// Deletes a file by its path in the directory.
   static Future<bool> deleteAudioFile(String filePath) async {
     try {
       final file = File(filePath);
@@ -69,11 +95,9 @@ class RecordServer {
     return false;
   }
 
-  /// Saqlangan audio fayllarni olish
   static Future<List<File>> getRecordFiles() async {
     if (audioDirectory != null) {
       final files = audioDirectory!.listSync();
-      // log(files.whereType<File>().toList().toString());
       return files.whereType<File>().toList();
     }
     return [];

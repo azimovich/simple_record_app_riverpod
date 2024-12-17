@@ -123,5 +123,6 @@ class RecordVm extends ChangeNotifier {
   void dispose() {
     super.dispose();
     _timer?.cancel();
+    _record.dispose();
   }
 }
