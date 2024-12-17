@@ -30,7 +30,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-.lib/src/future/home/view/pages/player_page.dart
+.player_page.dart
 
 # Symbolication related
 app.*.symbols
